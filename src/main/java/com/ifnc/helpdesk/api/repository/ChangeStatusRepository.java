@@ -6,6 +6,6 @@ import com.ifnc.helpdesk.api.entity.ChangeStatus;
 
 public interface ChangeStatusRepository extends MongoRepository<ChangeStatus, String>{
 
- Iterable<ChangeStatus> findByTicketIDOrderByDataChangeStatus(String ticketId);	
+	public Iterable<ChangeStatus> findByTicketIdOrderByDataChangeStatus(String ticketId);	
 	
 }

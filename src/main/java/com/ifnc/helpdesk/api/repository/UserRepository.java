@@ -6,6 +6,7 @@ import com.ifnc.helpdesk.api.entity.User;
 
 public interface UserRepository extends MongoRepository<User, String>{
 
-    User findByEmail(String email);
-	
+   public User findByEmail(String email);
+   
+      
 }
