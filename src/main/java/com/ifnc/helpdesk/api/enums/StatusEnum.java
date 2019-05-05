@@ -12,15 +12,12 @@ public enum StatusEnum {
 	
 	private String descricao;
 
-	public String getDescricao() {
-		return descricao;
-	}
-	
-	private StatusEnum(String descricao) {
+	StatusEnum(String descricao) {
 		this.descricao = descricao;
 	}
 	
-	
-	
+	public String getDescricao() {
+		return descricao;
+	}	
 		
 }

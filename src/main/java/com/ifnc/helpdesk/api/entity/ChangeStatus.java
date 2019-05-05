@@ -2,6 +2,7 @@ package com.ifnc.helpdesk.api.entity;
 
 import java.util.Date;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,6 +11,7 @@ import com.ifnc.helpdesk.api.enums.StatusEnum;
 @Document
 public class ChangeStatus {
 
+	@Id
 	private String id;
 	
 	@DBRef
