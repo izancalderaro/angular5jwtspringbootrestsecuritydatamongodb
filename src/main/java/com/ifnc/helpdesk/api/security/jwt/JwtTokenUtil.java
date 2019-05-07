@@ -29,8 +29,7 @@ public class JwtTokenUtil implements Serializable {
 	public String getUserNameFromToken(String token) {
 		String username;
 		try {
-			final Claims claims = getClaimsFromToken(token);
-			;
+			final Claims claims = getClaimsFromToken(token);			
 			username = claims.getSubject();
 		} catch (Exception e) {
 			username = null;
@@ -105,13 +104,13 @@ public class JwtTokenUtil implements Serializable {
         return refreshedToken;
     }
 
-//    public Boolean validateToken(String token, UserDetails userDetails) {
-//        JwtUser user = (JwtUser) userDetails;
-//        final String username = getUsernameFromToken(token);
-//        return (
-//                username.equals(user.getUsername())
-//                        && !isTokenExpired(token));
-//    }	
+    public Boolean validateToken(String token, UserDetails userDetails) {
+        JwtUser user = (JwtUser) userDetails;
+        final String username = getUserNameFromToken(token);
+        return (
+                username.equals(user.getUsername())
+                        && !isTokenExpired(token));
+    }	
 	
 	
 }
