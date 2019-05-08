@@ -1,3 +1,14 @@
+/**
+ * 
+ * Classe para maninpular o token criado a partir de:
+ * 
+ * jwt.secret 
+ * jwt.expiration
+ * 
+ *  
+ * 
+ **/
+
 package com.ifnc.helpdesk.api.security.jwt;
 
 import java.io.Serializable;

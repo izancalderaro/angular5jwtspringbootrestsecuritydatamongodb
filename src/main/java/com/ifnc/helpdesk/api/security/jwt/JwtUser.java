@@ -1,3 +1,12 @@
+/**
+ * 
+ * Classe necessária para o Spring Security (UserDetails) 
+ * controlar as autenticações do sistema
+ * 
+ *  
+ * 
+ **/
+
 package com.ifnc.helpdesk.api.security.jwt;
 
 import java.util.Collection;

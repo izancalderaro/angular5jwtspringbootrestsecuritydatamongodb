@@ -1,3 +1,9 @@
+/**
+ * 
+ * Classe para converter a classe JwtUser para um usuário reconhecido pelo Spring Security
+ * 
+ */
+
 package com.ifnc.helpdesk.api.security.jwt;
 
 
@@ -11,8 +17,10 @@ import com.ifnc.helpdesk.api.entity.User;
 import com.ifnc.helpdesk.api.enums.ProfileEnum;
 
 public class JwtUserFactory {
- private JwtUserFactory() {
-    } 
+ 
+	private JwtUserFactory() {
+    
+	} 
 
     public static JwtUser create(User user) {
         return new JwtUser(
