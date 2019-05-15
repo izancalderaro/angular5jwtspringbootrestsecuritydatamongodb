@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -24,7 +25,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import com.ifnc.helpdesk.api.security.jwt.JwtAuthenticationEntryPoint;
 import com.ifnc.helpdesk.api.security.jwt.JwtAuthenticationTokenFilter;
-
 
 
 @Configuration
@@ -53,6 +53,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		return new JwtAuthenticationTokenFilter();
 	}
 	
+	//Sem isso da erro 
+	//Consider defining a bean of type 'org.springframework.security.authentication.AuthenticationManager' in your configuration.
+	@Bean
+	public AuthenticationManager customAuthenticationManager() throws Exception {
+	  return authenticationManager();
+	}
+	
+	
 	@Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf().disable()
@@ -72,7 +80,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated();
         httpSecurity.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
         httpSecurity.headers().cacheControl();
-    }
-	
-	
+    }	
 }
