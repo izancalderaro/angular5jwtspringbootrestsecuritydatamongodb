@@ -22,9 +22,9 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Se
 	private static final long serialVersionUID = 1L;
 
 	@Override
-    public void commence(HttpServletRequest request,
-                         HttpServletResponse response, AuthenticationException authException) throws IOException {
-        response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Unauthorized");
-    }
+	public void commence(HttpServletRequest request, HttpServletResponse response,
+			AuthenticationException authException) throws IOException {
+		response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "NÃO AUTORIZADO");
+	}
 
 }
