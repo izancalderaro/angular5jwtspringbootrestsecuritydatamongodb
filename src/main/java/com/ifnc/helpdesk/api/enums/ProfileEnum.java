@@ -2,9 +2,9 @@ package com.ifnc.helpdesk.api.enums;
 
 public enum ProfileEnum {
 
-	ADMINISTRATOR("Administrador"),
-	CUSTOMER("Cliente"),
-	TECHNICIAN("Técnico");
+	ROLE_ADMIN("Administrador"),
+	ROLE_CUSTOMER("Cliente"),
+	ROLE_TECHNICIAN("Técnico");
 	
 	private String descricao;
 

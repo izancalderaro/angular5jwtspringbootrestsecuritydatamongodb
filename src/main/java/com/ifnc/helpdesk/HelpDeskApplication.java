@@ -29,7 +29,7 @@ public class HelpDeskApplication {
         User admin = new User();
         admin.setEmail("admin@helpdesk.com");
         admin.setPassword(passwordEncoder.encode("123456"));
-        admin.setProfile(ProfileEnum.ADMINISTRATOR);
+        admin.setProfile(ProfileEnum.ROLE_ADMIN);
 
         User find = userRepository.findByEmail("admin@helpdesk.com");
         if (find == null) {

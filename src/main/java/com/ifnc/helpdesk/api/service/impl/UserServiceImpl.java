@@ -5,13 +5,15 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Service;
 
 import com.ifnc.helpdesk.api.entity.User;
 import com.ifnc.helpdesk.api.repository.UserRepository;
 import com.ifnc.helpdesk.api.service.UserService;
 
-@Service
+@Component
 public class UserServiceImpl implements UserService{
 
 	@Autowired
@@ -44,7 +46,8 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public Page<User> findAll(int page, int count) {
 		// TODO Auto-generated method stub		
-		return userRepository.findAll(PageRequest.of(page, count));
+		Pageable pages = PageRequest.of(page, count);
+		return userRepository.findAll(pages);
 	}
 	
 	
